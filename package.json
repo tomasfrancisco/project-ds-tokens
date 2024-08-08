@@ -2,6 +2,9 @@
   "name": "project-ds-tokens",
   "version": "1.0.0",
   "description": "",
+  "repository": {
+    "url": "https://github.com/tomasfrancisco/project-ds-tokens"
+  },
   "main": "index.js",
   "exports": {
     "./variables.css": "./dist/css/_variables.css"
