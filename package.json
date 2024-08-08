@@ -1,0 +1,26 @@
+{
+  "name": "project-ds-tokens",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "exports": {
+    "./variables.css": "./dist/css/_variables.css"
+  },
+  "publishConfig": {
+    "@tomasfrancisco:registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "build": "style-dictionary build --config style-dictionary.config.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "style-dictionary": "^4.0.1"
+  },
+  "packageManager": "pnpm@9.4.0",
+  "engines": {
+    "node": "^20",
+    "pnpm": "9.4.0"
+  }
+}
