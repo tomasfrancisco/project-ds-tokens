@@ -21,7 +21,6 @@ jobs:
         with:
           node-version-file: "package.json"
           cache: "pnpm"
-          registry-url: https://npm.pkg.github.com/
 
       - name: Install Dependencies
         run: pnpm install
