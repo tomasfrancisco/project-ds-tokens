@@ -1,7 +1,14 @@
 {
   "name": "@tomasfrancisco/alpha",
   "version": "0.0.10",
-  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomasfrancisco/project-ds-tokens",
+    "directory": "packages/alpha"
+  },
+  "publishConfig": {
+    "@tomasfrancisco:registry": "https://npm.pkg.github.com"
+  },
   "exports": {
     "./variables.css": "./css/_variables.css"
   },
