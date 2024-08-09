@@ -3,7 +3,7 @@
   "version": "0.0.14",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tomasfrancisco/project-ds-tokens",
+    "url": "git@github.com:tomasfrancisco/project-ds-tokens.git",
     "directory": "packages/stable"
   },
   "publishConfig": {

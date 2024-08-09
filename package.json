@@ -3,7 +3,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/tomasfrancisco/project-ds-tokens"
+    "url": "git@github.com:tomasfrancisco/project-ds-tokens.git"
   },
   "publishConfig": {
     "@tomasfrancisco:registry": "https://npm.pkg.github.com"
