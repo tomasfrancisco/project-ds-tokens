@@ -1,36 +1,27 @@
 {
-  "name": "@tomasfrancisco/ds-tokens",
-  "version": "1.0.0",
-  "description": "",
+  "name": "project-ds-tokens",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/tomasfrancisco/project-ds-tokens"
-  },
-  "main": "index.js",
-  "exports": {
-    "./variables.css": "./dist/css/_variables.css"
   },
   "publishConfig": {
     "@tomasfrancisco:registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "build": "tsx src/style-dictionary.ts"
+    "build": "turbo run build",
+    "publish-packages": "turbo run build && changeset version && changeset publish"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "style-dictionary": "^4.0.1"
-  },
   "packageManager": "pnpm@9.4.0",
   "engines": {
     "node": "^20",
     "pnpm": "9.4.0"
   },
   "devDependencies": {
-    "@types/node": "^22.1.0",
-    "commander": "^12.1.0",
-    "tsx": "^4.17.0",
-    "typescript": "^5.5.4"
+    "@changesets/cli": "^2.27.7",
+    "turbo": "^2.0.12"
   }
 }

@@ -1,11 +1,5 @@
 import StyleDictionary from "style-dictionary";
-import {
-  alphaFilter,
-  betaFilter,
-  hiddenFromPublishingFilter,
-  releaseFilter,
-  stableFilter,
-} from "./filters";
+import { hiddenFromPublishingFilter, releaseFilter } from "./filters";
 import { recursiveFilter } from "./filters/utils";
 import { ReleaseType } from "./args";
 
@@ -20,7 +14,7 @@ async function run() {
             ...platforms,
             [`css-${release}`]: {
               transformGroup: "css",
-              buildPath: `releases/${release}/css/`,
+              buildPath: `../../packages/${release}/css/`,
               files: [
                 {
                   destination: "_variables.css",

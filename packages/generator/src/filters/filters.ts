@@ -21,7 +21,6 @@ export const stableFilter: Filter["filter"] = (token) =>
 
 export const releaseFilter = (release: ReleaseType): Filter["filter"] =>
   (() => {
-    console.log("📦 Release type:", release);
     switch (release) {
       case "alpha":
         return alphaFilter;
