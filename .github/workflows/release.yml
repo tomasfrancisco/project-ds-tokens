@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - packages/alpha
+      - packages/beta
+      - packages/stable
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
