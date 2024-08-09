@@ -3,7 +3,7 @@ export const hiddenFromPublishingFilter: Filter["filter"] = (token) => {
 };
 
 import { Filter } from "style-dictionary/types";
-import { args } from "../args";
+import { args, ReleaseType } from "../args";
 
 const getTokenState = (token) =>
   typeof token.attributes?.state === "string"
@@ -19,15 +19,16 @@ export const betaFilter: Filter["filter"] = (token) =>
 export const stableFilter: Filter["filter"] = (token) =>
   ["CURRENT"].includes(getTokenState(token));
 
-export const releaseFilter = (() => {
-  console.log("📦 Release type:", args.release);
-  switch (args.release) {
-    case "alpha":
-      return alphaFilter;
-    case "beta":
-      return betaFilter;
-    case "stable":
-    default:
-      return stableFilter;
-  }
-})();
+export const releaseFilter = (release: ReleaseType): Filter["filter"] =>
+  (() => {
+    console.log("📦 Release type:", release);
+    switch (release) {
+      case "alpha":
+        return alphaFilter;
+      case "beta":
+        return betaFilter;
+      case "stable":
+      default:
+        return stableFilter;
+    }
+  })();

@@ -1,27 +1,41 @@
 import StyleDictionary from "style-dictionary";
-import { hiddenFromPublishingFilter, releaseFilter } from "./filters";
+import {
+  alphaFilter,
+  betaFilter,
+  hiddenFromPublishingFilter,
+  releaseFilter,
+  stableFilter,
+} from "./filters";
 import { recursiveFilter } from "./filters/utils";
+import { ReleaseType } from "./args";
 
 async function run() {
+  const releases: ReleaseType[] = ["alpha", "beta", "stable"];
   const styleDictionary = new StyleDictionary(
     {
       source: ["./tokens/**/*.json"],
       platforms: {
-        css: {
-          transformGroup: "css",
-          buildPath: "dist/css/",
-          files: [
-            {
-              destination: "_variables.css",
-              format: "css/variables",
-              filter: (token, options) =>
-                recursiveFilter(token, options, [
-                  hiddenFromPublishingFilter,
-                  releaseFilter,
-                ]),
+        ...releases.reduce(
+          (platforms, release) => ({
+            ...platforms,
+            [`css-${release}`]: {
+              transformGroup: "css",
+              buildPath: `releases/${release}/css/`,
+              files: [
+                {
+                  destination: "_variables.css",
+                  format: "css/variables",
+                  filter: (token, options) =>
+                    recursiveFilter(token, options, [
+                      hiddenFromPublishingFilter,
+                      releaseFilter(release),
+                    ]),
+                },
+              ],
             },
-          ],
-        },
+          }),
+          {}
+        ),
       },
     },
     {

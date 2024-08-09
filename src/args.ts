@@ -1,6 +1,6 @@
 import { createCommand } from "commander";
 
-type ReleaseType = "alpha" | "beta" | "stable";
+export type ReleaseType = "alpha" | "beta" | "stable";
 
 const program = createCommand("style-dictionary");
 program.option<ReleaseType>(
