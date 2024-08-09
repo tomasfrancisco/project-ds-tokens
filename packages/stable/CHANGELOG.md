@@ -1,5 +1,11 @@
 # @tomasfrancisco/stable
 
+## 0.0.5
+
+### Patch Changes
+
+- update
+
 ## 0.0.4
 
 ### Patch Changes
