@@ -15,7 +15,11 @@ importers:
         specifier: ^2.0.12
         version: 2.0.12
 
-  packages/_generator:
+  packages/alpha: {}
+
+  packages/beta: {}
+
+  packages/generator:
     devDependencies:
       commander:
         specifier: ^12.1.0
@@ -29,10 +33,6 @@ importers:
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
-
-  packages/alpha: {}
-
-  packages/beta: {}
 
   packages/stable: {}
 
