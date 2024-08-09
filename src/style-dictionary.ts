@@ -40,14 +40,8 @@ async function run() {
 
   await styleDictionary.hasInitialized;
 
-  console.log("Build started...");
-  console.log("\n==============================================");
-
   await styleDictionary.cleanAllPlatforms();
   await styleDictionary.buildAllPlatforms();
-
-  console.log("\n==============================================");
-  console.log("\nBuild completed!");
 }
 
 run();
