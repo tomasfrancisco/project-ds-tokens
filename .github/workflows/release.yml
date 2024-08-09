@@ -3,9 +3,9 @@ name: ✨ Release
 on:
   push:
     paths:
-      - packages/alpha
-      - packages/beta
-      - packages/stable
+      - packages/alpha/**
+      - packages/beta/**
+      - packages/stable/**
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
