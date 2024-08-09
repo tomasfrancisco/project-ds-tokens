@@ -14,7 +14,7 @@
     "@tomasfrancisco:registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "build": "style-dictionary build --config style-dictionary.config.json"
+    "build": "tsx style-dictionary.ts"
   },
   "keywords": [],
   "author": "",
@@ -26,5 +26,10 @@
   "engines": {
     "node": "^20",
     "pnpm": "9.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.1.0",
+    "tsx": "^4.17.0",
+    "typescript": "^5.5.4"
   }
 }
