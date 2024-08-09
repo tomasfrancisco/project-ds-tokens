@@ -1,26 +1,10 @@
-import { createCommand } from "commander";
 import StyleDictionary from "style-dictionary";
 import { alphaFilter, betaFilter, stableFilter } from "./filters";
-
-type ReleaseType = "alpha" | "beta" | "stable";
-
-const program = createCommand("style-dictionary");
-program.option<ReleaseType>(
-  "--release <type>",
-  "Release type",
-  (value) => {
-    console.log("Release type:", value);
-    return value as ReleaseType;
-  },
-  "stable"
-);
-
-program.parse();
-
-const options = program.opts();
+import { args } from "./args";
 
 const releaseFilter = (() => {
-  switch (options.release) {
+  console.log("📦 Release type:", args.release);
+  switch (args.release) {
     case "alpha":
       return alphaFilter;
     case "beta":
