@@ -1,19 +1,6 @@
 import StyleDictionary from "style-dictionary";
-import { alphaFilter, betaFilter, stableFilter } from "./filters";
-import { args } from "./args";
-
-const releaseFilter = (() => {
-  console.log("📦 Release type:", args.release);
-  switch (args.release) {
-    case "alpha":
-      return alphaFilter;
-    case "beta":
-      return betaFilter;
-    case "stable":
-    default:
-      return stableFilter;
-  }
-})();
+import { hiddenFromPublishingFilter, releaseFilter } from "./filters";
+import { recursiveFilter } from "./filters/utils";
 
 async function run() {
   const styleDictionary = new StyleDictionary(
@@ -27,7 +14,11 @@ async function run() {
             {
               destination: "_variables.css",
               format: "css/variables",
-              filter: releaseFilter,
+              filter: (token, options) =>
+                recursiveFilter(token, options, [
+                  hiddenFromPublishingFilter,
+                  releaseFilter,
+                ]),
             },
           ],
         },
